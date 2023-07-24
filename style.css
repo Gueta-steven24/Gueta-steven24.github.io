@@ -1,0 +1,920 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'poppins'/*arial*/, sans-serif;
+}
+
+:root {
+    --bg-color: #001c28; /* dati na kulay #1f242d*/
+    --second-bg-color: rgb(41, 57, 61) ; 
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 6rem 5% 5rem;
+} 
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 1px #001821 ;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.logo2 {
+    display: none;
+}
+
+
+.navbar a {
+    color: white;
+    margin: 0 2px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 1px 15px;
+    border-radius: 3px;
+}
+
+.navbar a:hover {
+    background: #f6f4ff;
+    color: var(--bg-color);
+
+}
+
+.navbar a.active {
+    color: var(--main-color);
+}
+
+.navbar a.active:hover {
+    color: var(--bg-color);
+}
+
+.navbar .navimage2 {
+    display: none;
+}
+
+.navbar .navimage1 {
+    display: none;
+}
+
+.navbar .navimage {
+    display: none;
+}
+.hamburger {
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 4px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+
+.hamburger:hover {
+    background: var(--second-bg-color);
+}
+
+/* lines for menu icon*/
+.hamburger div {
+    width: 20px;
+    height: 3px;
+    margin: 3px 0;
+    background: #f6f4ff;
+    border-radius: 2px;
+}
+
+.linenav {
+    display: none;
+    height: fit-content;
+    cursor: default;
+    border-radius: 5px;
+    transition: 0.2s;
+    padding-top: 10px;
+}
+
+.linenav div {
+    width: 100%;
+    height: 3px;
+    margin: 3px 0;
+    background: #f6f4ff;
+    opacity: 15%;
+    border-radius: 2px;
+    cursor: default;
+}
+
+/* This is to make home pic align at the right and text at the left*/
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.home-img img {
+    width: 35vw;
+    padding-top: 4rem;
+    animation: floatImage 3s ease-in-out infinite; 
+}
+
+@keyframes floatImage { 
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 500;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+
+.home-content h1 {
+    font-size: 5.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+} 
+
+.home-content p {
+    font-size: 1.9rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .4s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    transition: .2s ease;
+}
+ .btn:hover {
+    box-shadow: none;
+ }
+
+ .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color)
+ }
+
+ .about-img img {
+    width: 35vw;
+    transition-duration: 1s;
+ }
+
+ .about-img img:hover {
+    transform: skew(10deg, 10deg);
+ }
+
+ .about p {
+    text-indent: 6%;
+ }
+
+
+ .heading {
+    text-align: center;
+    font-size: 4rem;
+ }
+
+ .about-content h2 {
+    text-align: left;
+    line-height: 1.5;
+ }
+
+ .about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+ }
+
+ .about-content p{
+    text-align: justify;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+ }
+ 
+    .paragraph-container::-webkit-scrollbar {
+    width: 6px;
+    background: #374f54;
+    border-radius: 10px;
+  } 
+
+  .paragraph-container::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5px;
+  }
+
+
+  
+ .paragraph-container {
+    position: relative;
+    width: auto;
+    height: 300px; 
+    overflow: auto;
+  }
+
+  .paragraph-container P {
+    margin-right: 1.5rem;
+  }
+  
+
+ .services h2 {
+    margin-bottom: 5rem;
+ }
+
+.services-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+ }
+
+ .services-container .services-box {
+    /*flex: 1 1 30rem;*/
+    width: 260px;
+    height: 230px;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: 0.3s ease;
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.services-box h3 {
+    font-size: 2rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.services-box .btn {
+    margin-top: 2rem;
+}
+
+.portfolio {
+    background: var(--second-bg-color);
+}
+
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding: 0 8rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%; 
+    transition: .3s ease;
+
+}
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color)); /* this line produces gradient infront of the pictures*/
+    /* the following is for aligning texts at the center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*letting the text enter to the next line */
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%); /* addded - making the gradient and texts disappear*/
+    transition: .3s ease; /* added 2 - gradient will emerge from the bottom */
+}
+
+/* added 2 - to appear gradient upon hover */
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0%);
+}
+
+.portfolio-layer h4 {
+    font-size: 2.5rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.2rem;
+    margin: .3rem 0 1rem;
+}
+
+/* for the background holder of the sign */
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+.portfolio-layer a:hover {
+    background: var(--bg-color);
+}
+
+.portfolio-layer a:hover i {
+    color: var(--text-color);
+}
+
+.contact {
+    overflow: hidden;
+    position: relative;
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: rgba(41, 57, 61, 0.7);
+    border-radius: .8rem;
+    margin: .7rem 0;
+    /* opacity: 70%; */
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.diamondcontact {
+    margin-left: 55rem;
+    position: absolute;
+    width: 80vh;
+    z-index: -50;
+    animation: floatImage 3s ease-in-out infinite;
+}
+
+.diamondcontact1 {
+    position: absolute;
+    width: 50vh;
+    z-index: -1;
+    opacity: 70%;
+    animation: floatImage 3.3s ease-in-out infinite;
+}
+
+.diamondcontact2 {
+    margin: 0 0 0 40rem ;
+    position: absolute;
+    width: 20vh;
+    z-index: -1;
+    opacity:20%;
+    animation: floatImage 3.3s ease-in-out infinite;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+
+}
+
+
+/*BREAKPOINTS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    .diamondcontact {
+        width: 70vh;
+    }
+
+
+
+}
+
+
+
+@media (max-width: 991px) {
+    .header {
+        padding: 1.2rem 5%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .footer {
+        padding: 1rem 3%;
+    }
+
+    .about {
+        padding-bottom: 7rem;
+    }
+    
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .ve-parentcont {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .diamondcontact {
+        width: 60vh;
+    }
+    
+    .diamondcontact1 {
+        width: 35vh;
+    }
+    
+    .diamondcontact2 {
+        width: 15vh;
+    }
+    
+
+}
+
+@media (max-width: 850px) {
+    .portfolio-layer h4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* home pic will be placed under texts when resized to mobile*/
+    .home { 
+        flex-direction: column;
+    } 
+
+     
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem; 
+    } 
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    /* SEEMS NOT WORKING! THIS IS FOR PORTFOLIO*/
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ve-parentcont {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+}
+
+@media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .linenav {
+        display: block;
+    }
+
+      .wd-container {
+        flex-direction: column;
+      }
+
+      .diamondcontact {
+        margin-left: 45rem;
+      }
+    
+}
+
+@media (max-width: 650px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar .logo2 {
+        display: block;
+        font-size: 3rem;
+        padding: 2rem 0 0 1rem;
+        cursor: default;
+    }
+
+    .navmobile-header {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 0 15px;
+        position: absolute;
+        left: -450px;
+        top: 0;
+        z-index: 999;
+        width: 210px;
+        height: 100vh;
+        background-color: var(--bg-color);
+        transition: 0.2s;
+        box-shadow: 10px 0 50px 10px rgba(0, 0, 0, 5);
+        overflow: hidden;
+    }
+
+    .navbar .navimage2 {
+        display: block;
+        width: 9vh;
+        position: absolute;
+        z-index: -1;
+        opacity: 20%;
+        margin: 3.6rem 0 0 14rem;
+        animation: floatImage 3.9s ease-in-out infinite;
+
+    }
+
+    .navbar .navimage1 {
+        display: block;
+        position: absolute;
+        width: 20vh;
+        z-index: -1;
+        opacity: 50%;
+        animation: floatImage 3.6s ease-in-out infinite; 
+        
+    }
+
+
+    .navbar .navimage {
+        display: block;
+        width: 50vh;
+        animation: floatImage 3.4s ease-in-out infinite; 
+    }
+
+
+    .navbar a:hover {
+        background: var(--second-bg-color);
+        color: var(--main-color);
+        opacity: 40%;
+    }
+
+    /* for closing the dropdown once menu sign is clicked*/
+    #nav_check:checked ~ .navbar {
+        left: 0;
+    }
+
+    .navbar ul a {
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+
+    }
+
+    .navbar a {
+        font-size: 13px;
+        display: block;
+        padding: 15px 30px;
+        margin-top: 15px;
+    }
+
+    .navbar a.active {
+        color: var(--main-color);
+    }
+
+    .navbar a.active:hover {
+        color: var(--text-color);
+    }
+
+    .portfolio-container {
+        padding: 0 1rem;
+    }
+    
+}
+
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+    .diamondcontact {
+        margin-left: 35rem;
+      }
+
+      
+    .diamondcontact1 {
+        width: 30vh;
+      }
+      
+      .diamondcontact2 {
+        width: 10vh;
+        margin: 0 0 0 11rem;
+      }
+
+}
+
+@media (max-width: 365px)  {
+    .home-img img {
+        width: 95vw;
+        padding-top: 0;
+    }
+
+    .about-img img {
+        width: 95vw;
+    }
+
+    .about-content p{
+        font-size: 1.8rem;
+     }
+
+    .portfolio-container {
+        padding: 0 2rem;
+    }
+
+    .services-container .services-box {
+        width: 200px;
+        height: 170px;
+    }
+
+    .services-box i {
+        font-size: 6rem;
+    }
+
+    .services-box h3 {
+        font-size: 1.5rem;
+    }
+
+    .services-box .btn {
+        font-size: 1.2rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2.3rem;
+    }
+    
+    .portfolio-layer p {
+        font-size: 1.4rem;
+    }
+
+    .diamondcontact {
+        margin-left: 25rem;
+      }
+
+      
+    .diamondcontact1 {
+        width: 20vh;
+      }
+      
+      .diamondcontact2 {
+        width: 10vh;
+        margin: 0 0 0 11rem;
+      }
+    
+
+    /* mapagitna an up button nan text*/
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+}
+
+
+/* ========== THIS IS FOR SERVICES ========== */
+
+.services-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 5%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 1px 2px #001016 ;
+}
+
+.mp-heading {
+    display: flex;
+}
+
+.services-header i {
+    padding-right: 1rem;
+    font-size: 2.8rem;
+    color: var(--main-color);
+}
+
+#mpbody section {
+    background: var(--bg-color);
+    padding-top: 2rem;
+}
+
+#mpbody .portfolio-box {
+    box-sizing: 0;
+
+}
+
+
+
+/*============ THIS IS FOR REVEAL ANIMATION FOR EACH SECTION ================*/
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
